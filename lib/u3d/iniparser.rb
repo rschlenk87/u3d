@@ -24,6 +24,11 @@ require 'inifile'
 require 'u3d/utils'
 require 'u3d_core/helper'
 
+$proxy_addr = '10.2.20.158'
+$proxy_port = '3128'
+$proxy_user = 'ebeu5jt'
+$proxy_pass = 'toomuchdonnerstag'
+
 module U3d
   # Load and parse INI files
   module INIparser
