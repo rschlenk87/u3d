@@ -90,7 +90,7 @@ url=#{url}
         uri = URI(cached_versions[version] + ini_name)
         UI.verbose("Searching for ini file at #{uri}")
         File.open(ini_path, 'wb') do |f|
-          data = Net::HTTP.get(uri)
+          data = Net::HTTP::Proxy($proxy_addr, $proxy_port, $proxy_user, $proxy_pass).get(uri)
           data.tr!("\"", '')
           data.gsub!(/Note:.+\n/, '')
           f.write(data)
